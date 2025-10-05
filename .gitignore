@@ -1,0 +1,55 @@
+# Dependencias
+node_modules/
+
+# Compilación de Next.js
+.next/
+out/
+
+# Firebase (evita subir archivos pesados)
+.firebase/
+.firebase-debug.log
+.firebaserc
+.firebase-tools.json
+
+# Builds y producción
+build/
+dist/
+tmp/
+
+# Archivos del sistema y logs
+.DS_Store
+Thumbs.db
+*.log
+*.lock
+*.pem
+
+# Entorno local
+.env
+.env*.local
+
+# Configuración de IDEs
+.vscode/
+.idea/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Vercel
+.vercel/
+echo "API/*.json" >> .gitignore
+echo ".env" >> .gitignore
+echo "node_modules/" >> .gitignore
+
+# Archivos y claves sensibles
+API/aeroshieldgt-firebase-adminsdk-fbsvc-6be3eed161.json
+.env
+.env.local
+*.key
+*.pem
+# Archivos y claves sensibles
+API/aeroshieldgt-firebase-adminsdk-fbsvc-6be3eed161.json
+.env
+.env.local
+*.key
+*.pem

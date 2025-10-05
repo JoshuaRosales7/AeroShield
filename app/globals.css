@@ -1,0 +1,194 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ============================================
+   🧠 Variantes personalizadas
+============================================ */
+@custom-variant dark (&:is(.dark *));
+@custom-variant high-contrast (&:is(.high-contrast *));
+
+/* ============================================
+   🌌 AeroShield Design System
+   Inspirado en Vercel, NASA y colores Teal
+============================================ */
+:root {
+  /* Fondo base */
+  --background: oklch(0.14 0.01 250);
+  --foreground: oklch(0.98 0.01 240);
+
+  /* Superficies */
+  --card: oklch(0.17 0.01 250);
+  --card-foreground: oklch(0.98 0.01 240);
+  --popover: oklch(0.16 0.01 250);
+  --popover-foreground: oklch(0.98 0.01 240);
+
+  /* Colores principales */
+  --primary: oklch(0.68 0.15 195);
+  --primary-foreground: oklch(0.12 0.01 240);
+  --secondary: oklch(0.25 0.02 240);
+  --secondary-foreground: oklch(0.95 0.01 240);
+
+  /* Tonos complementarios */
+  --muted: oklch(0.22 0.02 240);
+  --muted-foreground: oklch(0.65 0.01 240);
+  --accent: oklch(0.3 0.05 220);
+  --accent-foreground: oklch(0.98 0.01 240);
+
+  /* Alerta/destructivo */
+  --destructive: oklch(0.58 0.22 25);
+  --destructive-foreground: oklch(0.98 0.01 240);
+
+  /* Bordes y anillos */
+  --border: oklch(0.25 0.02 240);
+  --input: oklch(0.25 0.02 240);
+  --ring: oklch(0.68 0.15 195);
+
+  /* Paleta de gráficos */
+  --chart-1: oklch(0.68 0.15 195); /* Teal */
+  --chart-2: oklch(0.7 0.18 140);  /* Green */
+  --chart-3: oklch(0.75 0.2 85);   /* Yellow */
+  --chart-4: oklch(0.65 0.2 35);   /* Orange */
+  --chart-5: oklch(0.55 0.22 25);  /* Red */
+
+  /* Sidebar */
+  --sidebar: oklch(0.14 0.01 240);
+  --sidebar-foreground: oklch(0.98 0.01 240);
+  --sidebar-primary: oklch(0.68 0.15 195);
+  --sidebar-primary-foreground: oklch(0.12 0.01 240);
+  --sidebar-accent: oklch(0.22 0.02 240);
+  --sidebar-accent-foreground: oklch(0.98 0.01 240);
+  --sidebar-border: oklch(0.25 0.02 240);
+  --sidebar-ring: oklch(0.68 0.15 195);
+
+  --radius: 0.5rem;
+}
+
+/* ============================================
+   🌑 Modo oscuro refinado
+============================================ */
+.dark {
+  --background: oklch(0.1 0.02 250);
+  --card: oklch(0.13 0.02 250);
+  --popover: oklch(0.12 0.02 250);
+  --border: oklch(0.22 0.02 240);
+  --accent: oklch(0.35 0.05 210);
+  --ring: oklch(0.7 0.15 195);
+  --chart-1: oklch(0.7 0.15 195);
+  --chart-3: oklch(0.85 0.2 95);
+}
+
+/* ============================================
+   ♿ Alto contraste
+============================================ */
+.high-contrast {
+  --background: oklch(0 0 0);
+  --foreground: oklch(1 0 0);
+  --primary: oklch(0.85 0.2 195);
+  --destructive: oklch(0.7 0.25 25);
+  --border: oklch(0.5 0 0);
+  --ring: oklch(0.85 0.2 195);
+}
+
+/* ============================================
+   🌈 Definición del tema (Tailwind Inline)
+============================================ */
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Sidebar */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* ============================================
+   🧱 Estilos base
+============================================ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50 transition-colors duration-200;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
+    background-image: radial-gradient(circle at 25% 25%, rgba(0, 255, 255, 0.05), transparent 60%),
+                      radial-gradient(circle at 75% 75%, rgba(0, 150, 255, 0.05), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  /* 🗺️ Leaflet (tema oscuro nativo) */
+  .leaflet-container {
+    @apply bg-background rounded-lg border border-border shadow-inner;
+  }
+
+  .leaflet-popup-content-wrapper,
+  .leaflet-popup-tip {
+    @apply bg-card text-card-foreground border border-border shadow-lg;
+  }
+
+  .leaflet-control-zoom a {
+    @apply bg-card text-foreground border border-border hover:bg-accent hover:text-accent-foreground;
+  }
+
+  .leaflet-bar {
+    @apply border-border shadow-sm;
+  }
+
+  /* 🖱️ Scrollbar personalizada */
+  ::-webkit-scrollbar {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.3 0.05 240);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.4 0.05 240);
+  }
+
+  /* 🌟 Transiciones suaves */
+  html {
+    scroll-behavior: smooth;
+  }
+}
