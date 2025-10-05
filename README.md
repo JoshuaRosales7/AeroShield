@@ -75,7 +75,7 @@ The system uses **machine learning and predictive models** to analyze environmen
 - **ORM:** Prisma  
 - **AI / ML:** TensorFlow + scikit-learn  
 - **Integrations:** NASA, USGS, FIRMS, Smithsonian, OpenWeather, Meteomatics  
-- **API Docs:** [https://api.aeroshield.earth/docs](https://api.aeroshield.earth/docs) *(si aplica)*
+- **API Docs:** [https://api.aeroshield.earth/docs](https://nasa-gt-api-248654985571.us-central1.run.app/docs) *(si aplica)*
 
 ### 🔸 Infrastructure
 - **Monitoring:** Google Cloud Logging + Sentry  
@@ -150,3 +150,4 @@ The **AeroShield API** centralizes environmental data, processes it with AI mode
     }
   ]
 }
+
