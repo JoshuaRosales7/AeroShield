@@ -5,11 +5,12 @@
 <h1 align="center">🛰️ AeroShield</h1>
 
 <p align="center">
-  <strong>Plataforma integral de monitoreo ambiental y gestión de riesgos impulsada por IA</strong><br>
-  <em>Combina datos satelitales, sensores locales e inteligencia artificial para detectar y prevenir desastres naturales.</em>
+  <strong>Intelligent Environmental Monitoring and Risk Management Platform powered by AI</strong><br>
+  <em>Integrating satellite data, local sensors, and artificial intelligence to detect and prevent natural disasters.</em>
 </p>
 
 <p align="center">
+  <a href="https://aeroshield.earth" target="_blank"><img src="https://img.shields.io/badge/🌍 Visit%20Platform-aeroshield.earth-blue?style=for-the-badge"></a><br><br>
   <img src="https://img.shields.io/badge/Next.js-14-black?logo=next.js" />
   <img src="https://img.shields.io/badge/Firebase-Backend-orange?logo=firebase" />
   <img src="https://img.shields.io/badge/PostgreSQL-Database-blue?logo=postgresql" />
@@ -20,111 +21,114 @@
 
 ---
 
-## 🌍 Descripción General
+## 🌍 Overview
 
-**AeroShield** es una plataforma de **monitoreo ambiental inteligente** que recopila datos desde satélites, sensores IoT y fuentes meteorológicas globales, aplicando **modelos de inteligencia artificial** para detectar riesgos y generar alertas tempranas.
+**[AeroShield](https://aeroshield.earth)** is an **AI-powered environmental monitoring and risk management platform** that merges data from satellites, IoT sensors, and meteorological services to detect and predict natural disasters in real time.
 
-Proporciona a comunidades e instituciones información ambiental en tiempo real sobre **calidad del aire, actividad sísmica, volcánica, incendios y condiciones meteorológicas**, optimizando los tiempos de respuesta ante emergencias.
-
----
-
-## 🧠 Características Principales
-
-### 🌫️ Calidad del Aire
-- Monitoreo en tiempo real de NO₂, PM₂.₅, PM₁₀, O₃, CO.  
-- Predicciones basadas en IA con reportes diarios, semanales y mensuales.
-
-### 🌋 Actividad Volcánica
-- Seguimiento de emisiones, plumas y sismicidad.  
-- Integración con **Smithsonian GVP** y **NASA EONET**.
-
-### 🌪️ Sismos e Incendios
-- Detección de sismos desde **USGS**.  
-- Visualización de incendios activos vía **NASA FIRMS**.
-
-### 🌦️ Meteorología
-- Datos de temperatura, presión, viento, visibilidad y precipitación.  
-- Pronósticos mediante **Meteomatics API** con análisis predictivo de IA.
-
-### 🚨 Alertas Inteligentes
-- Generación automática de alertas con IA y validación humana.  
-- Notificaciones en **Telegram**, **push**, y **correo electrónico**.  
-- Clasificación por severidad: bajo, medio, alto, crítico.  
-- Registro en **Firestore** y envío con **Firebase Cloud Messaging (FCM)**.
+The system uses **machine learning and predictive models** to analyze environmental conditions, providing early alerts for air pollution, wildfires, earthquakes, and severe weather events.
 
 ---
 
-## ⚙️ Arquitectura del Sistema
+## 🧠 Key Features
+
+### 🌫️ Air Quality
+- Real-time monitoring of **NO₂, PM₂.₅, PM₁₀, O₃, CO** and other pollutants.  
+- AI-generated forecasts (daily, weekly, and monthly).  
+- Health impact categorization and visual alerts.
+
+### 🌋 Volcanic Activity
+- Tracking volcanic emissions and seismic signals.  
+- Data sources: **Smithsonian GVP** and **NASA EONET**.  
+- AI-based anomaly detection.
+
+### 🌪️ Earthquakes & Wildfires
+- Real-time seismic data via **USGS**.  
+- Active fire detection using **NASA FIRMS**.  
+- Smart correlation between events and risk zones.
+
+### 🌦️ Meteorology
+- Real-time temperature, pressure, wind, visibility, and precipitation.  
+- AI-enhanced predictions through **Meteomatics API**.  
+- Multi-layer weather map with historical replay.
+
+### 🚨 Smart Alert System
+- AI-based automatic alerts with human validation.  
+- Notifications via **Telegram**, **push**, and **email**.  
+- Severity classification: low, medium, high, critical.  
+- Logging and delivery via **Firestore + Firebase Cloud Messaging (FCM)**.
+
+---
+
+## ⚙️ System Architecture
 
 ### 🔸 Frontend
 - **Framework:** Next.js 14 (TypeScript)  
 - **UI:** TailwindCSS + ShadCN UI + Leaflet / Mapbox GL  
-- **Autenticación:** Firebase Auth + JWT  
-- **Idiomas:** Español / Inglés  
-- **Despliegue:** Firebase Hosting + Vercel  
+- **Auth:** Firebase Auth + JWT  
+- **Languages:** English / Spanish  
+- **Deployment:** Firebase Hosting + Vercel  
+- **URL:** 👉 [https://aeroshield.earth](https://aeroshield.earth)
 
 ### 🔸 Backend
-- **Servidor:** FastAPI + Firebase Functions  
-- **Base de Datos:** PostgreSQL + PostGIS  
+- **Server:** FastAPI + Firebase Functions  
+- **Database:** PostgreSQL + PostGIS  
 - **ORM:** Prisma  
-- **IA / ML:** Modelos predictivos (TensorFlow, scikit-learn)  
-- **Integraciones externas:** NASA, USGS, FIRMS, Smithsonian, OpenWeather, Meteomatics  
+- **AI / ML:** TensorFlow + scikit-learn  
+- **Integrations:** NASA, USGS, FIRMS, Smithsonian, OpenWeather, Meteomatics  
+- **API Docs:** [https://api.aeroshield.earth/docs](https://api.aeroshield.earth/docs) *(si aplica)*
 
-### 🔸 Infraestructura
-- **Logs y monitoreo:** Google Cloud Logging + Sentry  
-- **CI/CD:** GitHub Actions con despliegue automático  
-- **Contenedores:** Docker + Docker Compose  
+### 🔸 Infrastructure
+- **Monitoring:** Google Cloud Logging + Sentry  
+- **CI/CD:** GitHub Actions  
+- **Containers:** Docker + Docker Compose  
 
 ---
 
-## ⚙️ API REST – FastAPI
+## ⚙️ REST API – FastAPI
 
-El backend de **AeroShield** incluye una **API ambiental inteligente** desarrollada con **FastAPI**, que centraliza y procesa los datos ambientales mediante IA, generando y enviando alertas automáticas a través de Firebase.
+The **AeroShield API** centralizes environmental data, processes it with AI models, and manages automatic alert distribution via Firebase.
 
-### 📡 Endpoints Principales
+### 📡 Main Endpoints
 
-| Endpoint | Método | Descripción |
+| Endpoint | Method | Description |
 |-----------|---------|-------------|
-| `/` | GET | Información general de la API |
-| `/dashboard/summary` | GET | Resumen ambiental con KPIs, AQI, clima y alertas |
-| `/environment/full` | GET | Datos ambientales completos (aire, clima, volcanes, sismos, viento) |
-| `/weather/current` | GET | Clima actual por coordenadas |
-| `/weather/forecast` | GET | Pronóstico de 1 a 7 días |
-| `/weather/cities` | GET | Clima actual de las principales ciudades de Guatemala |
-| `/alerts/check` | GET | Genera y envía alertas automáticas |
-| `/alerts/send-test` | POST | Envía una alerta de prueba |
-| `/alerts/history` | GET | Historial de alertas guardadas en Firestore |
-| `/alerts/stats` | GET | Estadísticas de alertas por tipo, severidad y estado |
-| `/pollutants/{pollutant}` | GET | Datos de un contaminante específico |
-| `/cities/pollution` | GET | Contaminación por ciudad |
-| `/health` | GET | Estado del sistema y conexión a Firebase |
+| `/` | GET | API overview |
+| `/dashboard/summary` | GET | Environmental summary (KPI, AQI, weather, alerts) |
+| `/environment/full` | GET | Complete data (air, weather, volcanoes, earthquakes, wind) |
+| `/weather/current` | GET | Current weather by coordinates |
+| `/weather/forecast` | GET | Forecast 1–7 days |
+| `/weather/cities` | GET | Weather for Guatemalan cities |
+| `/alerts/check` | GET | Generate automatic alerts |
+| `/alerts/send-test` | POST | Send a test alert |
+| `/alerts/history` | GET | Retrieve alert history |
+| `/alerts/stats` | GET | Alert statistics |
+| `/pollutants/{pollutant}` | GET | Pollutant-specific data |
+| `/cities/pollution` | GET | Pollution by city |
+| `/health` | GET | System & Firebase connection status |
 
 ---
 
-### 🧠 Funcionalidades de la API
+### 🧠 AI & Data Capabilities
 
-#### 🔥 Sistema de Alertas Inteligente
-- Envío automático de alertas basadas en IA.  
-- Notificaciones en tiempo real vía Firebase Cloud Messaging (FCM).  
-- Registro de estadísticas y logs en Firestore.  
+#### 🔥 Smart Alert System
+- AI-based automatic alerts with multi-channel notifications.  
+- Real-time statistics and logging in Firestore.  
 
-#### 🌫️ Calidad del Aire (OpenAQ + IA)
-- Cálculo de **AQI (Air Quality Index)** en tiempo real.  
-- Evaluación por ciudad o zona geográfica.  
-- Soporte para contaminantes: NO₂, PM₂.₅, O₃, HCHO.  
+#### 🌫️ Air Quality (OpenAQ + AI)
+- Real-time AQI computation and predictions.  
+- Pollution level categorization by city or region.  
 
-#### 🌋 Monitoreo Geofísico
-- **USGS:** detección de sismos recientes y magnitud.  
-- **NASA EONET:** actividad volcánica activa o moderada.  
+#### 🌋 Geophysical Monitoring
+- Earthquake tracking (USGS).  
+- Volcanic activity updates (NASA EONET + GVP).  
 
-#### 🌦️ Meteorología (Meteomatics)
-- Datos de temperatura, humedad, presión, visibilidad y radiación UV.  
-- Pronóstico de 3 a 7 días.  
-- IA para predicción de lluvias intensas o vientos fuertes.  
+#### 🌦️ Meteorology (Meteomatics)
+- Temperature, humidity, wind, and UV index data.  
+- AI-based extreme weather detection.
 
 ---
 
-### 📊 Ejemplo de Respuesta: `/dashboard/summary`
+## 📊 Example Response: `/dashboard/summary`
 
 ```json
 {
@@ -133,7 +137,7 @@ El backend de **AeroShield** incluye una **API ambiental inteligente** desarroll
   "weather": { "temperature": 24.8, "humidity": 68, "source": "Meteomatics" },
   "metrics": {
     "aqi": 92,
-    "aqi_category": { "category": "Moderada", "color": "yellow" },
+    "aqi_category": { "category": "Moderate", "color": "yellow" },
     "pm25_avg_ugm3": 35.2,
     "temperature": 24.8,
     "humidity": 68
@@ -141,8 +145,8 @@ El backend de **AeroShield** incluye una **API ambiental inteligente** desarroll
   "alerts_recent": [
     {
       "severity": "medium",
-      "title": "Lluvia intensa",
-      "description": "Precipitación intensa detectada"
+      "title": "Heavy Rain Detected",
+      "description": "Intense precipitation detected in monitored area"
     }
   ]
 }
