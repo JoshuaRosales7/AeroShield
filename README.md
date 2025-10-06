@@ -2,8 +2,6 @@
   <img src="https://raw.githubusercontent.com/JoshuaRosales7/AeroShield/refs/heads/main/API/benershield.png?token=GHSAT0AAAAAADMOSUMHMNM2OHGE7RLXN6CE2HDDULA" alt="AeroShield Banner" width="100%">
 </p>
 
-<h1 align="center">🛰️ AeroShield</h1>
-
 <p align="center">
   <strong>Intelligent Environmental Monitoring and Risk Management Platform powered by AI</strong><br>
   <em>Integrating satellite data, local sensors, and artificial intelligence to detect and prevent natural disasters.</em>
@@ -150,6 +148,7 @@ The **AeroShield API** centralizes environmental data, processes it with AI mode
     }
   ]
 }
+
 
 
 
