@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JoshuaRosales7/AeroShield/refs/heads/main/API/benershield.png?token=GHSAT0AAAAAADMOSUMHMNM2OHGE7RLXN6CE2HDDULA" alt="AeroShield Banner" width="100%">
+  <img src="https://raw.githubusercontent.com/JoshuaRosales7/AeroShield/refs/heads/main/IMG-20251005-WA0023.jpg" alt="AeroShield Banner" width="100%">
 </p>
 
 <p align="center">
@@ -148,6 +148,7 @@ The **AeroShield API** centralizes environmental data, processes it with AI mode
     }
   ]
 }
+
 
 
 
