@@ -1,6 +1,0 @@
-fastapi
-uvicorn
-aiohttp
-firebase-admin
-cachetools
-python-multipart
